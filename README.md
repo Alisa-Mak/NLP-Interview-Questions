@@ -352,5 +352,5 @@ Modern tokenizers, like BPE and WordPiece, handle OOV words by breaking them int
 The **vocab size** affects model efficiency and coverage. A large vocabulary reduces the number of tokens per sentence but increases memory usage and complexity. A smaller vocabulary creates longer sequences but handles OOV words better. When training a new tokenizer, you’d choose the vocab size by balancing model size, sequence length, and the specific language/task needs.
 
 61. **What is the difference between static and contextual embeddings?**
-**Static Embeddings**: Fixed word vectors that do not change with context (e.g., Word2Vec, GloVe). Each word has a single representation.
-**Contextual Embeddings**: Dynamic word vectors that vary depending on the surrounding words (e.g., ELMo, BERT). Each word’s representation changes based on its context in a sentence.
+- **Static Embeddings**: Fixed word vectors that do not change with context (e.g., Word2Vec, GloVe). Each word has a single representation.
+- **Contextual Embeddings**: Dynamic word vectors that vary depending on the surrounding words (e.g., ELMo, BERT). Each word’s representation changes based on its context in a sentence.
