@@ -119,22 +119,24 @@
 19. **How does a recurrent neural network (RNN) differ from a feedforward neural network?**  
    RNNs have connections that form directed cycles, allowing them to maintain memory of previous inputs, making them suitable for sequence data. Feedforward networks have no cycles and process input in a single direction without retaining any past information.
 
-20. **What are some limitations of traditional RNNs?**  
+   RNNs (Recurrent Neural Networks) are older approaches that were used to handle tasks in NLP before the advent of Transformers and large language models (LLMs)
+
+21. **What are some limitations of traditional RNNs?**  
     Traditional RNNs struggle with long-range dependencies due to their inability to retain information over long sequences. They are also prone to the vanishing gradient problem, making training difficult for long sequences.
 
-21. **What is the vanishing gradient problem in RNNs?**  
+22. **What is the vanishing gradient problem in RNNs?**  
     The vanishing gradient problem occurs when gradients become very small during backpropagation, preventing the model from learning long-term dependencies effectively. This is common in deep networks and RNNs processing long sequences.
 
-22. **Describe the structure and purpose of Long Short-Term Memory (LSTM) networks.**  
+23. **Describe the structure and purpose of Long Short-Term Memory (LSTM) networks.**  
     LSTMs are a type of RNN designed to overcome the vanishing gradient problem. They have a memory cell that retains information over long time steps, with gates (input, output, and forget) controlling the flow of information. This structure allows LSTMs to capture long-term dependencies in sequences better than traditional RNNs.
 
-23. **What is attention mechanism in NLP?**  
+24. **What is attention mechanism in NLP?**  
    The attention mechanism allows a model to focus on specific parts of an input sequence when making predictions, giving more weight to important words. It helps models handle long-range dependencies by selectively attending to relevant information, improving performance in tasks like translation and summarization.
 
-24. **Explain the transformer architecture.**  
+25. **Explain the transformer architecture.**  
    The transformer architecture is a deep learning model designed for sequence processing tasks without relying on recurrence. It uses self-attention to process input sequences in parallel, making it more efficient than RNNs. Transformers consist of stacked encoder-decoder layers where the encoder maps inputs into embeddings, and the decoder generates the output sequence.
 
-25. **What are the advantages of transformers over RNNs and LSTMs?**  
+26. **What are the advantages of transformers over RNNs and LSTMs?**  
    Transformers have several advantages over RNNs and LSTMs, including:  
    - **Parallel processing**: Transformers process all tokens in a sequence simultaneously, whereas RNNs and LSTMs process sequentially, making transformers faster.
    - **Better handling of long-range dependencies**: The self-attention mechanism allows transformers to capture dependencies across long sequences more effectively than RNNs, which struggle with long-term memory.
