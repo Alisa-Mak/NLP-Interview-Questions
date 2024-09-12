@@ -275,3 +275,11 @@ Word sense disambiguation (WSD) is the process of determining which meaning of a
 51. **What are some ethical considerations in NLP research and applications?**  
 Ethical considerations include ensuring privacy and data security, avoiding biases in models that can lead to unfair treatment of certain groups, and being transparent about how models are trained and used. It's also important to consider the potential for misuse and to implement safeguards to mitigate harmful consequences.
 
+      In the context of LLMs, **HHH** stands for **Honesty, Helpfulness, and Harmlessness**, key principles guiding responsible AI behavior:
+   
+      **Honesty**: The model should provide accurate, truthful, and reliable information, avoiding fabrication or misleading responses.
+         
+      **Helpfulness**: It should aim to assist users by offering relevant and constructive responses that address their queries or problems.
+      
+      **Harmlessness**: The model must avoid causing harm, such as by avoiding offensive, biased, or harmful language and ensuring it does not promote harmful actions or ideas.
+
