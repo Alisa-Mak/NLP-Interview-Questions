@@ -147,8 +147,9 @@
    Transformer-based Encoder-Decoder:
 Transformers have become the dominant architecture, particularly after the introduction of the Transformer model. Unlike RNNs, transformers rely on self-attention mechanisms that process all elements of a sequence in parallel, enabling faster training and capturing longer-range dependencies more effectively. The Transformer Encoder-Decoder architecture is widely used in models like BERT (encoder-only), GPT (decoder-only), and BART/T5 (full encoder-decoder).
 
-Encoder: The encoder consists of multiple layers of self-attention and feed-forward networks. Each layer processes the input in parallel, making the transformer highly efficient.
-Decoder: The decoder also consists of self-attention layers, but it adds an additional layer to attend to the encoder’s output. This allows it to generate sequences while keeping track of the input sequence context.
+   Encoder: The encoder consists of multiple layers of self-attention and feed-forward networks. Each layer processes the input in parallel, making the transformer highly efficient.
+   
+   Decoder: The decoder also consists of self-attention layers, but it adds an additional layer to attend to the encoder’s output. This allows it to generate sequences while keeping track of the input sequence context.
 
 26. **What is beam search in the context of sequence generation?**  
    Beam search is a heuristic search algorithm used in sequence generation tasks to explore multiple possible output sequences simultaneously. Instead of selecting only the best next token, beam search keeps track of several potential candidates (beams) and continues to expand the most promising sequences based on cumulative probability. It balances exploration and exploitation to improve output quality.
