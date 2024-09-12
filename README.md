@@ -2,52 +2,44 @@
 
 1. **Describe the types of tasks that are best suited for BERT, GPT, and BART/T5 based on their respective architectures?**
 
-BERT (Encoder-only)
-   - **Architecture**: BERT (Bidirectional Encoder Representations from Transformers) is designed with only an encoder. It processes the input text bidirectionally, meaning it looks at the entire context of a word both to the left and the right, making it powerful for understanding contextual relationships.
-
-   - **Best for**:
-     - **Text Classification**: Sentiment analysis, spam detection, etc.
-     - **Named Entity Recognition (NER)**: Identifying entities such as names, places, or organizations in text.
-     - **Question Answering (QA)**: Extracting answers from a passage of text, e.g., SQuAD tasks.
-     - **Part-of-Speech Tagging (POS)**: Assigning grammatical categories (noun, verb, etc.) to words in a sentence.
-     - **Textual Similarity**: Determining how similar two pieces of text are (e.g., paraphrase detection).
-     - **Embedding Generation**: Generating embeddings for tasks like search or clustering.
-
-   - **Why?**: BERT’s encoder-only architecture is excellent for understanding and representing text at a deep level because it has a bidirectional view of the context around each word, making it strong for tasks requiring deep understanding of input text.
-
-GPT (Decoder-only)
-   - **Architecture**: GPT (Generative Pre-trained Transformer) is based on a decoder-only architecture. It’s unidirectional, meaning it generates text by predicting the next word based on previous ones (left-to-right sequence generation). GPT is primarily used for language generation tasks.
-
-   - **Best for**:
-     - **Text Generation**: Writing essays, articles, or creative content.
-     - **Storytelling and Dialogue Generation**: Conversational AI and chatbots.
-     - **Autocompletion**: Completing sentences, emails, code, etc.
-     - **Summarization (generative)**: Generating summaries of documents.
-     - **Machine Translation (generative)**: Translating text from one language to another.
-     - **Language Modeling**: Predicting the next word in a sequence (e.g., predictive text).
-
-   - **Why?**: GPT’s decoder-only architecture is highly effective for generation tasks since it predicts one token at a time in a sequence. It’s designed to generate coherent and contextually relevant outputs by building on prior tokens, making it powerful for creative or sequential tasks.
-
-BART / T5 (Full Encoder-Decoder)
-   - **Architecture**: BART and T5 are full encoder-decoder models, which makes them highly flexible and versatile for both understanding and generating text. The encoder processes the input, and the decoder generates output, making them ideal for sequence-to-sequence tasks.
-
-   - **Best for**:
-     - **Text Summarization**: Generating concise summaries from longer texts (both extractive and abstractive summarization).
-     - **Machine Translation**: Translating text from one language to another.
-     - **Text Generation**: Similar to GPT but with more flexibility due to the encoder-decoder architecture.
-     - **Question Answering**: Similar to BERT but with the ability to generate more complex responses.
-     - **Text Completion and Transformation**: Tasks like paraphrasing or text style transfer.
-     - **Data-to-Text Generation**: Converting structured data (like tables or databases) into natural language text.
-
-   - **Why?**: The encoder-decoder architecture of models like BART and T5 excels at both understanding and generating sequences. This makes them ideal for complex tasks where both input comprehension and output generation are required, such as summarization, translation, and text-to-text transformations.
-
-Summary:
-
-- **BERT (Encoder-only)**: Best for tasks requiring deep understanding of the input, such as classification, extraction, and embedding generation. It excels at text comprehension.
-- **GPT (Decoder-only)**: Specializes in generating text and creative tasks that involve predicting or continuing sequences. It’s strong in content creation and language modeling.
-- **BART/T5 (Encoder-Decoder)**: Highly versatile, good for both understanding and generating text, making them suitable for sequence-to-sequence tasks like translation and summarization.
-
-Each model architecture has strengths suited to different NLP tasks based on whether they are focused on comprehension, generation, or both.
+   BERT (Encoder-only)
+      - **Architecture**: BERT (Bidirectional Encoder Representations from Transformers) is designed with only an encoder. It processes the input text bidirectionally, meaning it looks at the entire context of a word both to the left and the right, making it powerful for understanding contextual relationships.
+   
+      - **Best for**:
+        - **Text Classification**: Sentiment analysis, spam detection, etc.
+        - **Named Entity Recognition (NER)**: Identifying entities such as names, places, or organizations in text.
+        - **Question Answering (QA)**: Extracting answers from a passage of text, e.g., SQuAD tasks.
+        - **Part-of-Speech Tagging (POS)**: Assigning grammatical categories (noun, verb, etc.) to words in a sentence.
+        - **Textual Similarity**: Determining how similar two pieces of text are (e.g., paraphrase detection).
+        - **Embedding Generation**: Generating embeddings for tasks like search or clustering.
+   
+      - **Why?**: BERT’s encoder-only architecture is excellent for understanding and representing text at a deep level because it has a bidirectional view of the context around each word, making it strong for tasks requiring deep understanding of input text.
+   
+   GPT (Decoder-only)
+      - **Architecture**: GPT (Generative Pre-trained Transformer) is based on a decoder-only architecture. It’s unidirectional, meaning it generates text by predicting the next word based on previous ones (left-to-right sequence generation). GPT is primarily used for language generation tasks.
+   
+      - **Best for**:
+        - **Text Generation**: Writing essays, articles, or creative content.
+        - **Storytelling and Dialogue Generation**: Conversational AI and chatbots.
+        - **Autocompletion**: Completing sentences, emails, code, etc.
+        - **Summarization (generative)**: Generating summaries of documents.
+        - **Machine Translation (generative)**: Translating text from one language to another.
+        - **Language Modeling**: Predicting the next word in a sequence (e.g., predictive text).
+   
+      - **Why?**: GPT’s decoder-only architecture is highly effective for generation tasks since it predicts one token at a time in a sequence. It’s designed to generate coherent and contextually relevant outputs by building on prior tokens, making it powerful for creative or sequential tasks.
+   
+   BART / T5 (Full Encoder-Decoder)
+      - **Architecture**: BART and T5 are full encoder-decoder models, which makes them highly flexible and versatile for both understanding and generating text. The encoder processes the input, and the decoder generates output, making them ideal for sequence-to-sequence tasks.
+   
+      - **Best for**:
+        - **Text Summarization**: Generating concise summaries from longer texts (both extractive and abstractive summarization).
+        - **Machine Translation**: Translating text from one language to another.
+        - **Text Generation**: Similar to GPT but with more flexibility due to the encoder-decoder architecture.
+        - **Question Answering**: Similar to BERT but with the ability to generate more complex responses.
+        - **Text Completion and Transformation**: Tasks like paraphrasing or text style transfer.
+        - **Data-to-Text Generation**: Converting structured data (like tables or databases) into natural language text.
+   
+      - **Why?**: The encoder-decoder architecture of models like BART and T5 excels at both understanding and generating sequences. This makes them ideal for complex tasks where both input comprehension and output generation are required, such as summarization, translation, and text-to-text transformations.
 
 2. **What is NLP, and why is it important?**  
    Natural Language Processing (NLP) is a field of AI that focuses on the interaction between computers and human language. It's important because it enables machines to understand, interpret, and respond to human language, making applications like chatbots, translation, and voice assistants possible.
@@ -55,67 +47,83 @@ Each model architecture has strengths suited to different NLP tasks based on whe
 3. **Explain the difference between NLP and NLU (Natural Language Understanding).**  
    NLP is a broader field that deals with processing and analyzing human language, while NLU is a subset of NLP focused on understanding the meaning and context of language.
 
-4. **What are some common applications of NLP?**  
+   **Natural Language Processing (NLP):**  
+   NLP encompasses a wide range of tasks involving the processing and analysis of human language. It includes techniques and applications for understanding, interpreting, and generating text. 
+   
+   *Examples:*
+   - **Machine Translation:** Translating text from one language to another, such as Google Translate.
+   - **Named Entity Recognition (NER):** Identifying and categorizing entities like people, organizations, and locations in a text.
+   - **Sentiment Analysis:** Determining the sentiment behind a piece of text, such as classifying a movie review as positive or negative.
+   
+   **Natural Language Understanding (NLU):**  
+   NLU is a specific subset of NLP that focuses on understanding the meaning and context of language. It involves interpreting and extracting information from text, often to facilitate deeper interactions with users.
+   
+   *Examples:*
+   - **Intent Recognition:** In a chatbot, determining if a user’s query is about booking a flight, checking weather, or seeking customer support.
+   - **Slot Filling:** Extracting specific information from a user’s input, such as dates, locations, or names, to complete a booking request.
+   - **Word Sense Disambiguation (WSD):** Identifying the correct meaning of a word in context, such as distinguishing between "bank" as a financial institution or the side of a river.
+
+5. **What are some common applications of NLP?**  
    Common applications include machine translation, sentiment analysis, speech recognition, chatbots, text summarization, and document classification.
 
-5. **Describe tokenization in NLP.**  
+6. **Describe tokenization in NLP.**  
    Tokenization is the process of splitting text into smaller units, such as words or phrases (tokens), which are then analyzed in NLP tasks.
 
-6. **What is stemming, and how does it differ from lemmatization?**  
+7. **What is stemming, and how does it differ from lemmatization?**  
    Stemming reduces words to their root forms by stripping suffixes, often resulting in non-standard words. Lemmatization, on the other hand, reduces words to their base form (lemma) based on dictionary definitions.
 
-7. **Explain the concept of stop words in NLP.**  
+8. **Explain the concept of stop words in NLP.**  
    Stop words are common words (like "the," "is," "in") that are usually filtered out in NLP tasks because they provide little meaningful information.
 
-8. **What is POS tagging, and why is it used?**  
+9. **What is POS tagging, and why is it used?**  
    Part-of-Speech (POS) tagging assigns parts of speech (like noun, verb, adjective) to words in a sentence, helping understand sentence structure and meaning.
 
-9. **How does named entity recognition (NER) work?**  
+10. **How does named entity recognition (NER) work?**  
    NER identifies and classifies entities in text, such as people, organizations, locations, and dates. It uses statistical models and linguistic rules to label entities in context.
 
-10. **What is TF-IDF, and what is its significance in NLP?**  
+11. **What is TF-IDF, and what is its significance in NLP?**  
    TF-IDF (Term Frequency-Inverse Document Frequency) is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It increases with the word's frequency in a document but decreases with its frequency across multiple documents, helping identify key terms that are more unique to specific documents.
 
-11. **Explain the concept of word embeddings.**  
+12. **Explain the concept of word embeddings.**  
    Word embeddings are dense vector representations of words where similar words have similar representations in a continuous vector space. They capture semantic relationships between words, allowing algorithms to understand meanings and similarities.
 
-12. **What are some popular word embedding techniques?**  
+13. **What are some popular word embedding techniques?**  
    Popular word embedding techniques include Word2Vec, GloVe, and FastText. These methods transform words into vectors that preserve their contextual relationships.
 
-13. **What is Word2Vec, and how does it work?**  
+14. **What is Word2Vec, and how does it work?**  
    Word2Vec is a neural network-based model that learns word embeddings by predicting word contexts. It operates using two main architectures: CBOW (Continuous Bag of Words) and Skip-gram, which train the model to predict either the target word from its context or the context from the target word.
 
-14. **Describe the difference between CBOW and Skip-gram models in Word2Vec.**  
+15. **Describe the difference between CBOW and Skip-gram models in Word2Vec.**  
    CBOW predicts a word based on its surrounding context, while Skip-gram does the reverse by predicting the context words given a target word. CBOW is generally faster, while Skip-gram is better for capturing rare word relationships.
 
-15. **What is GloVe (Global Vectors for Word Representation)?**  
+16. **What is GloVe (Global Vectors for Word Representation)?**  
    GloVe is a word embedding technique that combines matrix factorization and local context-based methods to produce word vectors. It captures both global and local word co-occurrence information to better represent the meaning and relationships of words.
 
-16. **Explain the concept of language modeling.**  
+17. **Explain the concept of language modeling.**  
    Language modeling is the process of predicting the probability of a sequence of words. It is used to determine the likelihood of sentences, improve language understanding, and assist in applications like speech recognition and machine translation.
 
-17. **What is perplexity in language modeling?**  
+18. **What is perplexity in language modeling?**  
    Perplexity is a metric used to evaluate the quality of a language model. It measures how well the model predicts a sample of text, with lower perplexity indicating better predictive performance.
 
-18. **How does a recurrent neural network (RNN) differ from a feedforward neural network?**  
+19. **How does a recurrent neural network (RNN) differ from a feedforward neural network?**  
    RNNs have connections that form directed cycles, allowing them to maintain memory of previous inputs, making them suitable for sequence data. Feedforward networks have no cycles and process input in a single direction without retaining any past information.
 
-19. **What are some limitations of traditional RNNs?**  
+20. **What are some limitations of traditional RNNs?**  
     Traditional RNNs struggle with long-range dependencies due to their inability to retain information over long sequences. They are also prone to the vanishing gradient problem, making training difficult for long sequences.
 
-20. **What is the vanishing gradient problem in RNNs?**  
+21. **What is the vanishing gradient problem in RNNs?**  
     The vanishing gradient problem occurs when gradients become very small during backpropagation, preventing the model from learning long-term dependencies effectively. This is common in deep networks and RNNs processing long sequences.
 
-21. **Describe the structure and purpose of Long Short-Term Memory (LSTM) networks.**  
+22. **Describe the structure and purpose of Long Short-Term Memory (LSTM) networks.**  
     LSTMs are a type of RNN designed to overcome the vanishing gradient problem. They have a memory cell that retains information over long time steps, with gates (input, output, and forget) controlling the flow of information. This structure allows LSTMs to capture long-term dependencies in sequences better than traditional RNNs.
 
-22. **What is attention mechanism in NLP?**  
+23. **What is attention mechanism in NLP?**  
    The attention mechanism allows a model to focus on specific parts of an input sequence when making predictions, giving more weight to important words. It helps models handle long-range dependencies by selectively attending to relevant information, improving performance in tasks like translation and summarization.
 
-23. **Explain the transformer architecture.**  
+24. **Explain the transformer architecture.**  
    The transformer architecture is a deep learning model designed for sequence processing tasks without relying on recurrence. It uses self-attention to process input sequences in parallel, making it more efficient than RNNs. Transformers consist of stacked encoder-decoder layers where the encoder maps inputs into embeddings, and the decoder generates the output sequence.
 
-24. **What are the advantages of transformers over RNNs and LSTMs?**  
+25. **What are the advantages of transformers over RNNs and LSTMs?**  
    Transformers have several advantages over RNNs and LSTMs, including:  
    - **Parallel processing**: Transformers process all tokens in a sequence simultaneously, whereas RNNs and LSTMs process sequentially, making transformers faster.
    - **Better handling of long-range dependencies**: The self-attention mechanism allows transformers to capture dependencies across long sequences more effectively than RNNs, which struggle with long-term memory.
