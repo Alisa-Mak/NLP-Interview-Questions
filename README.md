@@ -81,6 +81,17 @@
 10. **How does named entity recognition (NER) work?**  
    NER identifies and classifies entities in text, such as people, organizations, locations, and dates. It uses statistical models and linguistic rules to label entities in context.
 
+      **Preprocessing:** Text is cleaned and tokenized into smaller units like words or phrases.
+      
+      **Feature Extraction:** Various features (e.g., words, parts of speech, context) are extracted to help the model identify entities.
+      
+      **Model Application:** Statistical models or machine learning algorithms (like CRF or LSTM) are used to analyze these features. These models are often trained on annotated datasets where entities are labeled.
+      
+      **Entity Classification:** The model labels tokens or phrases as belonging to categories such as PERSON, ORGANIZATION, LOCATION, or DATE based on the patterns it has learned.
+      
+      *Example:*  
+      In the sentence "Apple Inc. was founded by Steve Jobs in Cupertino," NER identifies "Apple Inc." as an ORGANIZATION, "Steve Jobs" as a PERSON, and "Cupertino" as a LOCATION.
+
 11. **What is TF-IDF, and what is its significance in NLP?**  
    TF-IDF (Term Frequency-Inverse Document Frequency) is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It increases with the word's frequency in a document but decreases with its frequency across multiple documents, helping identify key terms that are more unique to specific documents.
 
