@@ -354,3 +354,69 @@ The **vocab size** affects model efficiency and coverage. A large vocabulary red
 61. **What is the difference between static and contextual embeddings?**
 - **Static Embeddings**: Fixed word vectors that do not change with context (e.g., Word2Vec, GloVe). Each word has a single representation.
 - **Contextual Embeddings**: Dynamic word vectors that vary depending on the surrounding words (e.g., ELMo, BERT). Each word’s representation changes based on its context in a sentence.
+
+Here are brief explanations for each question:
+
+62. **What is class imbalance? How can it be identified? Name all approaches to solving this problem.**
+**Class imbalance** occurs when some classes in a dataset are underrepresented compared to others. It can be identified by checking the distribution of class labels. **Approaches** to solve it include:
+  - Resampling (oversampling minority class or undersampling majority class)
+  - Using synthetic data generation (e.g., SMOTE)
+  - Applying class weights in loss functions
+  - Using anomaly detection techniques
+
+63. **Can dropout be used during inference, and why?**
+Dropout is not used during inference because it randomly drops units during training to prevent overfitting. During inference, dropout is disabled to ensure consistent and reliable predictions.
+
+64. **What is the difference between the Adam optimizer and AdamW?**
+**AdamW** differs from Adam by decoupling weight decay from the optimization step. AdamW applies weight decay directly to the weights, while Adam combines weight decay with the gradient updates.
+
+65. **How do consumed resources change with gradient accumulation?**
+**Gradient accumulation** reduces memory consumption by accumulating gradients over multiple mini-batches before performing a single update. This allows for larger effective batch sizes without requiring proportional memory.
+
+66. **How to optimize resource consumption during training?**
+Optimize resource consumption by:
+  - Using gradient accumulation
+  - Reducing batch size
+  - Implementing mixed precision training
+  - Employing efficient data loaders
+  - Utilizing distributed training
+
+67. **What ways of distributed training do you know?**
+- **Data Parallelism**: Splitting data across multiple processors.
+- **Model Parallelism**: Splitting the model across different processors.
+- **Hybrid Parallelism**: Combining both data and model parallelism.
+- **Distributed Data Parallel (DDP)**: Synchronizing gradients across multiple nodes.
+
+68. **What is textual augmentation? Name all methods you know.**
+**Textual augmentation** involves creating variations of text data to improve model robustness. Methods include:
+  - Synonym replacement
+  - Random insertion
+  - Random deletion
+  - Back-translation
+  - Contextual augmentation (e.g., using models like BERT)
+
+69. **Why is padding less frequently used? What is done instead?**
+Padding is less frequently used because it can introduce inefficiencies. Instead, **dynamic batching** and **sequence bucketing** are used to handle varying sequence lengths more efficiently.
+
+70. **Explain how warm-up works.**
+**Warm-up** involves gradually increasing the learning rate from a small value to the target value over a few iterations at the beginning of training. This helps stabilize training and improve convergence.
+
+71. **Explain the concept of gradient clipping?**
+**Gradient clipping** involves setting a threshold to limit the magnitude of gradients during training. It prevents exploding gradients by clipping gradients that exceed a predefined value.
+
+72. **How does teacher forcing work, provide examples?**
+**Teacher forcing** involves using the true output from the training data as the next input during training a sequence model, rather than the model’s own previous prediction. For example, in sequence-to-sequence models, the true target word is fed as input at each step rather than the model’s predicted word.
+
+73. **Why and how should skip connections be used?**
+**Skip connections** help with training deep networks by allowing gradients to flow more easily through the network. They connect layers directly to later layers, bypassing intermediate layers to prevent vanishing gradients and improve learning.
+
+74. **What are adapters? Where and how can we use them?**
+**Adapters** are small trainable modules added to pre-trained models, allowing fine-tuning on specific tasks without modifying the entire model. They can be used to adapt models to new tasks with minimal training.
+
+75. **Explain the concepts of metric learning. What approaches do you know?**
+**Metric learning** focuses on learning a distance metric to measure similarity between data points. Approaches include:
+  - **Contrastive Loss**: Minimizes the distance between similar pairs and maximizes it between dissimilar pairs.
+  - **Triplet Loss**: Uses anchor, positive, and negative samples to enforce a margin between similar and dissimilar pairs.
+  - **Siamese Networks**: Networks that learn embeddings by comparing pairs of inputs.
+
+
