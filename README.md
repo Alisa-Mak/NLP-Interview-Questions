@@ -201,6 +201,27 @@ Transformers have become the dominant architecture, particularly after the intro
    - **O-Tag** is used for tokens that are outside any named entity.  
    This helps to distinguish between adjacent entities and correctly segment multi-word entities.
 
+   Named Entity Recognition (NER) uses the **BIO tagging scheme** to label each token in a sentence.
+   
+      ### Example:
+      Consider the sentence: "Apple Inc. was founded by Steve Jobs in Cupertino."
+      
+      - **"Apple"**: B-ORG (Beginning of an Organization)
+      - **"Inc."**: I-ORG (Inside an Organization)
+      - **"Steve"**: B-PER (Beginning of a Person)
+      - **"Jobs"**: I-PER (Inside a Person)
+      - **"Cupertino"**: B-LOC (Beginning of a Location)
+      
+      **Benefits**
+      BIO tagging helps distinguish between different entities and identify multi-word entities accurately. For example, without a B-tag, the model could confuse "Steve Jobs" as two separate entities. The B and I tags ensure the model understands that they form a single entity (Person).
+      
+      ### How NER Models Use BIO Tagging:
+      1. **Tokenization:** The text is first split into tokens (words or phrases).
+      2. **Tagging:** Each token is assigned a tag (B, I, O) by the NER model.
+      3. **Prediction:** Using machine learning or deep learning (e.g., CRF, LSTMs, Transformers), the model predicts which tokens belong to entities and labels them accordingly.
+   
+   This tagging scheme enables precise recognition of complex entities in text.
+
 38. **What is sequence labeling, and why is it important in NLP?**  
    Sequence labeling is the task of assigning labels to each token in a sequence of text, such as words in a sentence. It is important in NLP for tasks like POS tagging, NER, and chunking, where the goal is to annotate text with meaningful tags that help in understanding its structure and content.
 
