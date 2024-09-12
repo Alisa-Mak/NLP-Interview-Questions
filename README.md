@@ -317,3 +317,37 @@ Ethical considerations include ensuring privacy and data security, avoiding bias
       
       **Harmlessness**: The model must avoid causing harm, such as by avoiding offensive, biased, or harmful language and ensuring it does not promote harmful actions or ideas.
 
+52. **What types of tokenizers do you know? Compare them.**
+
+- **Whitespace Tokenizers**: Split text on spaces. Simple but doesn't handle subwords well.
+- **Character-level Tokenizers**: Break down text into individual characters. Useful in languages without clear word boundaries but produces long sequences.
+- **Word-level Tokenizers**: Split text into words. Easy to understand, but struggles with rare or out-of-vocabulary (OOV) words.
+- **Subword Tokenizers (WordPiece, BPE)**: Break text into subword units. Handle OOV words well and balance sequence length and vocabulary size. Used in modern transformer models.
+  
+53. **Can you extend a tokenizer? If yes, in what case would you do this? When would you retrain a tokenizer? What needs to be done when adding new tokens?**
+Yes, tokenizers can be extended by adding new tokens (e.g., domain-specific words). You’d do this if you encounter many OOV words specific to your task (e.g., medical terms). You’d need to update the vocabulary and adjust tokenization rules. If many new tokens are added, you may need to retrain the tokenizer to learn optimal subword splitting. 
+
+54. **How do regular tokens differ from special tokens?**
+- **Regular tokens** represent standard words or subwords in a text.
+- **Special tokens** are used for specific purposes, such as indicating sentence boundaries (`[CLS]`, `[SEP]` in BERT) or padding sequences (`[PAD]`). These help the model interpret and structure input correctly.
+
+55. **Why is lemmatization not used in transformers? And why do we need tokens?**
+Transformers don’t use lemmatization because tokenizers (like BPE or WordPiece) break text into subword units, allowing models to handle morphological variations inherently. Lemmatization is unnecessary because subwords provide enough flexibility. Tokens are crucial because transformers process sequences of token embeddings, not raw text.
+
+56. **How is a tokenizer trained? Explain with examples of WordPiece and BPE.**
+- **BPE (Byte-Pair Encoding)**: Starts with a base vocabulary of characters, then merges frequent character pairs iteratively to form subwords. Over time, common words are represented as single subwords, while rare ones are split into smaller units.
+- **WordPiece**: Similar to BPE, but it prioritizes maximizing the likelihood of the training corpus given the tokenization. It chooses merges that help represent the corpus more efficiently. WordPiece is commonly used in BERT.
+
+57. **What position does the CLS vector occupy? Why?**
+The **CLS** (classification) token is the first token in the input sequence for models like BERT. It’s used to aggregate the information from the entire sequence because, after transformer layers, the hidden state of `[CLS]` is expected to represent the whole sequence, making it useful for classification tasks.
+
+58. **What tokenizer is used in BERT, and which one in GPT?**
+- **BERT** uses the **WordPiece** tokenizer.
+- **GPT** models use **Byte-Pair Encoding (BPE)**.
+
+59. **Explain how modern tokenizers handle out-of-vocabulary words?**
+Modern tokenizers, like BPE and WordPiece, handle OOV words by breaking them into smaller subword units that are in the vocabulary. This ensures that even unseen words are represented by meaningful subcomponents.
+
+60. **What does the tokenizer vocab size affect? How will you choose it in the case of new training?**
+The **vocab size** affects model efficiency and coverage. A large vocabulary reduces the number of tokens per sentence but increases memory usage and complexity. A smaller vocabulary creates longer sequences but handles OOV words better. When training a new tokenizer, you’d choose the vocab size by balancing model size, sequence length, and the specific language/task needs.
+
