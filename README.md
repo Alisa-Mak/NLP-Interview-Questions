@@ -355,8 +355,6 @@ The **vocab size** affects model efficiency and coverage. A large vocabulary red
 - **Static Embeddings**: Fixed word vectors that do not change with context (e.g., Word2Vec, GloVe). Each word has a single representation.
 - **Contextual Embeddings**: Dynamic word vectors that vary depending on the surrounding words (e.g., ELMo, BERT). Each word’s representation changes based on its context in a sentence.
 
-Here are brief explanations for each question:
-
 62. **What is class imbalance? How can it be identified? Name all approaches to solving this problem.**
 **Class imbalance** occurs when some classes in a dataset are underrepresented compared to others. It can be identified by checking the distribution of class labels. **Approaches** to solve it include:
   - Resampling (oversampling minority class or undersampling majority class)
